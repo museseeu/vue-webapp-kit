@@ -1,6 +1,13 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 
+// common 3rd party plugin
+var commonPlugin = {
+      $: 'jquery',
+      jQuery: 'jquery',
+      moment: 'moment'
+}
+
 module.exports = {
   build: {
     env: require('./prod.env'),
@@ -8,6 +15,7 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    plugin: commonPlugin,
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
@@ -22,6 +30,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {},
+    plugin: commonPlugin,
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)

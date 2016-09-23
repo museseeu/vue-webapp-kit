@@ -23,11 +23,15 @@
 </template>
 
 <script>
+/* global $ moment*/
 import Hello from './components/Hello'
 
 export default {
   components: {
     Hello
+  },
+  ready () {
+    console.log('jquery' + $.fn.jquery + ' - ' + moment().format('MMM Do YY'))
   }
 }
 </script>

@@ -23,6 +23,8 @@ module.exports = merge(baseWebpackConfig, {
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    // common 3rd party plugin
+    new webpack.ProvidePlugin(config.dev.plugin),
     new webpack.NoErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
